@@ -4,7 +4,7 @@
 //! [async-std](https://async.rs/) as asynchronous runtime.  
 //! # Example
 //! The following example shows how to connect to `github.com` via Connect proxy (`tokio`):
-//! ```
+//! ```ignore
 //! use async_http_proxy::http_connect_tokio;
 //! use std::error::Error;
 //! use tokio::net::TcpStream;
@@ -23,7 +23,7 @@
 //!
 //! The following example shows how to connect to `example.org` with Basic Authentication via
 //! Connect proxy (`async-std`):
-//! ```
+//! ```ignore
 //! use async_http_proxy::http_connect_async_std;
 //! use async_std::net::TcpStream;
 //! use async_std::task;
