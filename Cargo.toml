@@ -42,3 +42,19 @@ optional = true
 [dev-dependencies.tokio]
 version = "~1.0.2"
 features = ["net", "rt-multi-thread", "macros"]
+
+[[example]]
+name = "tokio_connect"
+required-features = ["runtime-tokio"]
+
+[[example]]
+name = "tokio_basic_auth"
+required-features = ["runtime-tokio"]
+
+[[example]]
+name = "async_std_connect"
+required-features = ["runtime-async-std"]
+
+[[example]]
+name = "async_std_basic_auth"
+required-features = ["runtime-async-std"]
