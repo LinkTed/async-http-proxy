@@ -1,0 +1,43 @@
+[package]
+name = "async-http-proxy"
+version = "1.0.0"
+authors = ["LinkTed <link.ted@mailbox.org>"]
+edition = "2018"
+license = "BSD-3-Clause"
+description = "Lightweight asynchronous HTTP proxy client library"
+readme = "README.md"
+keywords = ["http", "proxy", "http2", "h2", "async", "client"]
+repository = "https://github.com/LinkTed/async-http-proxy"
+categories = ["network-programming"]
+include = ["src/**/*.rs", "examples/*.rs", "Cargo.toml", "README.md", "LICENSE"]
+
+[package.metadata.docs.rs]
+all-features = true
+
+[features]
+default = []
+basic-auth = ["base64"]
+runtime-tokio = ["tokio"]
+runtime-async-std = ["async-std"]
+
+[dependencies]
+url = "~2.2.0"
+thiserror = "~1.0.23"
+httparse = "~1.3.4"
+
+[dependencies.tokio]
+version = "~1.0.2"
+features = ["io-util"]
+optional = true
+
+[dependencies.async-std]
+version = "~1.9.0"
+optional = true
+
+[dependencies.base64]
+version = "~0.13.0"
+optional = true
+
+[dev-dependencies.tokio]
+version = "~1.0.2"
+features = ["net", "rt-multi-thread", "macros"]
