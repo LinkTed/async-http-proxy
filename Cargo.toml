@@ -13,6 +13,7 @@ include = ["src/**/*.rs", "examples/*.rs", "Cargo.toml", "README.md", "LICENSE"]
 
 [package.metadata.docs.rs]
 all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
 
 [features]
 default = []

@@ -1,4 +1,4 @@
-#![feature(doc_cfg)]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 //! `async-http-proxy` is a lightweight asynchronous HTTP proxy client library, which can be used
 //! to connect a to a TCP port via HTTP Connect proxy. It can use [Tokio](https://tokio.rs/) and
 //! [async-std](https://async.rs/) as asynchronous runtime.  
@@ -111,7 +111,7 @@ pub enum HttpError {
 /// }
 /// ```
 #[cfg(feature = "runtime-tokio")]
-#[doc(cfg(feature = "runtime-tokio"))]
+#[cfg_attr(docsrs, doc(cfg(all(feature = "runtime-tokio"))))]
 pub async fn http_connect_tokio<IO>(io: &mut IO, url: &url::Url) -> Result<(), HttpError>
 where
     IO: tokio::io::AsyncRead + tokio::io::AsyncWrite + Unpin,
@@ -149,7 +149,7 @@ where
 /// }
 /// ```
 #[cfg(feature = "runtime-async-std")]
-#[doc(cfg(feature = "runtime-async-std"))]
+#[cfg_attr(docsrs, doc(cfg(all(feature = "runtime-async-std"))))]
 pub async fn http_connect_async_std<IO>(io: &mut IO, url: &url::Url) -> Result<(), HttpError>
 where
     IO: async_std::io::Read + async_std::io::Write + Unpin,
