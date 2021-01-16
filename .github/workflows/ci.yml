@@ -48,7 +48,7 @@ jobs:
         uses: actions-rs/clippy-check@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          args: -- --deny warnings -A clippy::unknown-clippy-lints
+          args: --all-features -- --deny warnings -A clippy::unknown-clippy-lints
 
   tests:
     name: Job tests
