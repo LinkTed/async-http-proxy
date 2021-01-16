@@ -1,5 +1,5 @@
 #![feature(doc_cfg)]
-//! `async-http-proxy` is a lightweight asynchronous HTTP proxy client library, which can be used 
+//! `async-http-proxy` is a lightweight asynchronous HTTP proxy client library, which can be used
 //! to connect a to a TCP port via HTTP Connect proxy. It can use [Tokio](https://tokio.rs/) and
 //! [async-std](https://async.rs/) as asynchronous runtime.  
 //! # Example
