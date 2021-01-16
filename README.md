@@ -50,10 +50,10 @@ fn main() -> Result<(), Box<dyn Error>> {
 ```
 
 ## Features
-[x] HTTP `CONNECT`
-[x] Basic Auth
-[x] Tokio
-[x] async-std
+- [x] HTTP `CONNECT`
+- [x] Basic Auth
+- [x] Tokio
+- [x] async-std
 
 ## License
 This project is licensed under the [BSD-3-Clause](https://opensource.org/licenses/BSD-3-Clause) 
