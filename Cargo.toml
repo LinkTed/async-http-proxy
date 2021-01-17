@@ -1,6 +1,6 @@
 [package]
 name = "async-http-proxy"
-version = "1.0.0"
+version = "1.1.0"
 authors = ["LinkTed <link.ted@mailbox.org>"]
 edition = "2018"
 license = "BSD-3-Clause"
