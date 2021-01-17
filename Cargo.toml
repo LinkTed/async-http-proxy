@@ -22,7 +22,6 @@ runtime-tokio = ["tokio"]
 runtime-async-std = ["async-std"]
 
 [dependencies]
-url = "~2.2.0"
 thiserror = "~1.0.23"
 httparse = "~1.3.4"
 
@@ -49,7 +48,7 @@ required-features = ["runtime-tokio"]
 
 [[example]]
 name = "tokio_basic_auth"
-required-features = ["runtime-tokio"]
+required-features = ["runtime-tokio", "basic-auth"]
 
 [[example]]
 name = "async_std_connect"
@@ -57,4 +56,4 @@ required-features = ["runtime-async-std"]
 
 [[example]]
 name = "async_std_basic_auth"
-required-features = ["runtime-async-std"]
+required-features = ["runtime-async-std", "basic-auth"]

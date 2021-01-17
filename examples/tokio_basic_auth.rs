@@ -1,15 +1,12 @@
-use async_http_proxy::http_connect_tokio;
+use async_http_proxy::http_connect_tokio_with_basic_auth;
 use std::error::Error;
 use tokio::net::TcpStream;
-use url::Url;
 // Features "runtime-tokio" and "basic-auth" have to be activated
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
     let mut stream = TcpStream::connect("127.0.0.1:8080").await?;
-    // feature "basic-auth" have to be active
-    let url = Url::parse("https://USER:PASSWORD@example.org")?;
-
-    http_connect_tokio(&mut stream, &url).await?;
+    http_connect_tokio_with_basic_auth(&mut stream, "example.org", 443, "username", "password")
+        .await?;
     // stream is now connect to github.com
     Ok(())
 }
