@@ -64,7 +64,7 @@ fn check_code(response: &Response<'_, '_>) -> Result<(), HttpError> {
 fn check_reason(response: &Response<'_, '_>) -> Result<(), HttpError> {
     match response.reason {
         Some(reason) => {
-            if reason == "Connection Established" {
+            if reason == "Connection Established" || reason == "Connection established"{
                 Ok(())
             } else {
                 Err(HttpError::HttpReasonConnectionEstablished(
