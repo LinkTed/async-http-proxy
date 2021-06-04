@@ -61,28 +61,12 @@ fn check_code(response: &Response<'_, '_>) -> Result<(), HttpError> {
     }
 }
 
-fn check_reason(response: &Response<'_, '_>) -> Result<(), HttpError> {
-    match response.reason {
-        Some(reason) => {
-            if reason == "Connection Established" {
-                Ok(())
-            } else {
-                Err(HttpError::HttpReasonConnectionEstablished(
-                    reason.to_owned(),
-                ))
-            }
-        }
-        None => Err(HttpError::NoHttpReason),
-    }
-}
-
 fn parse_and_check(response_string: &str) -> Result<(), HttpError> {
     let mut response_headers = [EMPTY_HEADER; MAXIMUM_RESPONSE_HEADERS];
     let mut response = Response::new(&mut response_headers[..]);
     response.parse(response_string.as_bytes())?;
 
     check_code(&response)?;
-    check_reason(&response)?;
 
     Ok(())
 }
