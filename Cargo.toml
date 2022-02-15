@@ -22,24 +22,24 @@ runtime-tokio = ["tokio"]
 runtime-async-std = ["async-std"]
 
 [dependencies]
-thiserror = "~1.0.30"
-httparse = "~1.5.1"
+thiserror = "1.0.30"
+httparse = "1.5.1"
 
 [dependencies.tokio]
-version = "~1.15.0"
+version = "1.15.0"
 features = ["io-util"]
 optional = true
 
 [dependencies.async-std]
-version = "~1.10.0"
+version = "1.10.0"
 optional = true
 
 [dependencies.base64]
-version = "~0.13.0"
+version = "0.13.0"
 optional = true
 
 [dev-dependencies.tokio]
-version = "~1.15.0"
+version = "1.15.0"
 features = ["net", "rt-multi-thread", "macros"]
 
 [[example]]
